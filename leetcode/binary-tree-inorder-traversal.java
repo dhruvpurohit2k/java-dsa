@@ -11,3 +11,20 @@ class Solution {
         return list;
     }
 }
+//This solution uses Iteration instead of recurssion to traverse the node. What is does is it goes to the left most node and while going it pushes the nodes to the stack. Then we pop the latest added node and add its value to the result List. the root node then becomes the right node.
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        while(root!=null||!stack.isEmpty()){
+            while(root!=null){
+                stack.push(root);
+                root=root.left;
+            }
+            root = stack.pop();
+            result.add(root.val);
+            root = root.right;
+        }
+        return result;
+    }
+}
