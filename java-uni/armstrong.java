@@ -1,33 +1,16 @@
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
-
-
 class armstrong {
   public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    System.out.print("Enter a number to check whether its an armstrong or not : ");
-    int number = sc.nextInt();
+    int number = 371;
     int temp = number;
-    sc.close();
-    List<Integer> digits = new ArrayList<>();
-    while(number>0){
-      digits.add(number%10);
-      number/=10;
+    int sum = 0;
+    while(temp>0){
+      int remainder = temp%10;
+      temp/=10;
+      sum+=remainder*remainder*remainder; 
+      System.out.printf("remainder = %d temp = %d sum = %d \n",remainder,temp,sum);
     }
-    int sum=0;
-    for(int digit:digits){
-      sum+= Math.pow(digit,digits.size());
-    } 
-    if(sum==temp){
-      System.out.printf("%d is an armstrong number",temp);
-      System.out.println();
-    }else{
-      System.out.printf("%d is not an armstrong number",temp);
-      System.out.println();
-    }
+    if(sum==number) System.out.printf("%d is an armstrong number.\n",number);
+    else  System.out.printf("%d is not an armstrong number.\n",number);
   }
   
 }
