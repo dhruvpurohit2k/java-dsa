@@ -6,7 +6,7 @@ public class decBin {
     int power = 0;
     while(decimal>0){
       System.out.println("Iteration " + (power+1) + "----->");
-      bin += decimal%2*Math.pow(10,power);
+      bin += decimal%2*(int)Math.pow(10,power);
       decimal/=2;
       power++;
       System.out.printf("BIN = %d DECIMAL = %d POWER = %d\n",bin,decimal,power);
