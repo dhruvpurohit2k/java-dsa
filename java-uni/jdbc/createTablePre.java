@@ -14,6 +14,7 @@ public class createTablePre {
                   "grade varchar(2));";
       PreparedStatement ps = conn.prepareStatement(s);
       ps.execute();
+      System.out.println("Created table CLASSMATES");
    }catch( SQLException sq){
      System.out.println(sq);
    }

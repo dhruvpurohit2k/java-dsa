@@ -15,8 +15,9 @@ public class create_Table_Emp {
                   "emp_name varchar(100)," + 
                   "city varchar(100),"+
                   "salary int," +
-                  "date_of_joing date);";
+                  "date_of_joining date);";
       stmt.executeUpdate(q);
+      System.out.println("Table created Successfully");
     } catch (SQLException sq) {
       System.out.println(sq);
     }

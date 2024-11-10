@@ -15,6 +15,7 @@ public class updateTableEmp{
         res.updateInt("salary",newval);
         res.updateRow();
       }
+      System.out.println("Updated Salary of the Employess");
    }catch( SQLException sq){
      System.out.println(sq);
    }
